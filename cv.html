@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Estudiante 2º DAM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 30px;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: radial-gradient(circle at top left, #1e293b, #020617);
+      border-radius: 18px;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+    }
+
+    header h2 {
+      margin: 8px 0 0;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .links a {
+      display: inline-block;
+      margin-left: 16px;
+      font-weight: 600;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #020617, #020617cc);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: inset 0 0 0 1px rgba(148,163,184,0.08), 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: rgba(56,189,248,0.12);
+      border: 1px solid rgba(56,189,248,0.35);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin: 6px 6px 0 0;
+      font-size: 0.9rem;
+    }
+
+    .experience-item, .project-item {
+      margin-bottom: 20px;
+    }
+
+    .experience-item h4, .project-item h4 {
+      margin: 0 0 4px;
+    }
+
+    .experience-item span, .project-item span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .links a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div>
+        <h1>Alejandro Porter</h1>
+        <h2>Estudiante de Desarrollo de Aplicaciones Multiplataforma (2º DAM)</h2>
+      </div>
+      <div class="links">
+        <a href="https://github.com/alejpm" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/alejandro-porter-05605139b/" target="_blank">LinkedIn</a>
+      </div>
+    </header>
+
+    <aside class="card">
+      <h3>Perfil</h3>
+      <p>
+        Estudiante de segundo curso de DAM con una fuerte orientación al desarrollo de software, buenas prácticas de programación y trabajo en equipo. Interés especial en el desarrollo backend y aplicaciones de todo tipo.
+      </p>
+
+      <h3>Datos de contacto</h3>
+      <ul>
+        <li>Email: alejandropmpro@gmail.com</li>
+        <li>Teléfono: +34 658 92 72 21</li>
+        <li>Valencia, Villar del Arzobispo</li>
+      </ul>
+
+      <h3>Habilidades técnicas</h3>
+      <div class="skills">
+        <span>Java</span>
+        <span>Python</span>
+        <span>HTML5</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>SQL</span>
+        <span>MySQL</span>
+        <span>MongoDB</span>
+        <span>Photoshop</span>
+        <span>TailWind CSS</span>
+      </div>
+
+      <h3>Idiomas</h3>
+      <ul>
+        <li>Español: Nativo</li>
+        <li>Inglés: Intermedio (B1/B2)</li>
+      </ul>
+    </aside>
+
+    <main class="card">
+      <h3>Formación académica</h3>
+      <div class="experience-item">
+        <ul>
+          <li>2016 - 2021       | IES La Serranía (Educación Secundaria Obligatoria)
+          <li>2021 - 2023       | Tame Formación (Sistemas Microinformáticos y redes).</li>
+          <li>2024 – actualidad | Tame Formación (Desarrollo de aplicaciones multiplataforma.</li>
+          <li>Prácticas grado medio realizadas en MoneyGuard SL.</li>
+        </ul>
+      </div>
+
+      <h3>Intereses</h3>
+
+      <div class="project-item">
+        <h4>Bases de datos</h4>
+        <span>MongoDB · MySQL </span>
+        <p>
+          Proyectos con bases de datos relacionales, diseños de bases de datos y optimización de estas.
+        </p>
+      </div>
+
+      <div class="project-item">
+        <h4>Backend y Frontend</h4>
+        <span>HTML · CSS · API</span>
+        <p>
+          Integración de bases de datos, experimentar con APIs, creación interfaces web completas.
+        </p>
+      </div>
+
+      <div class="project-item">
+        <h4>Misceláneo</h4>
+        <span>IA · Frameworks</span>
+        <p>Abierto en aprender cualquier framework o nuevas tecnologías.
+          
+        </p>
+      </div>
+
+      <h3>Competencias personales</h3>
+      <ul>
+        <li>Capacidad de aprendizaje rápido</li>
+        <li>Trabajo en equipo y comunicación efectiva</li>
+        <li>Organización</li>
+        <li>Resolución de problemas en común</li>
+      </ul>
+    </main>
+
+    <footer>
+      © 2026 · CV Alejandro Porter Mirkovic
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
