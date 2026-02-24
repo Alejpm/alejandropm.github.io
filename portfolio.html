@@ -1,2 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portafolio | Alejandro Porter</title>
 
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #3fb950;
+}
+
+h1::before {
+  content: "> ";
+}
+
+h2 {
+  margin: 8px 0 20px 0;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+
+.project-card {
+  background-color: #161b22;
+  border: 1px solid #3fb950;
+  border-radius: 6px;
+  padding: 20px;
+  transition: 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 12px rgba(63,185,80,0.3);
+}
+
+.project-card h4 {
+  margin-top: 0;
+  color: #3fb950;
+}
+
+.tech {
+  font-size: 12px;
+  color: #8b949e;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  padding-left: 18px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+
+.project-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-buttons a,
+.project-buttons button {
+  padding: 8px 14px;
+  border: 1px solid #3fb950;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #3fb950;
+  font-size: 13px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.project-buttons a:hover,
+.project-buttons button:hover {
+  background-color: #3fb950;
+  color: #0d1117;
+}
+
+.sidebar {
+  position: fixed;
+  left: 40px;
+  top: 100px;
+  width: 260px;
+  background-color: #161b22;
+  border: 1px solid #3fb950;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: #3fb950;
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid #3fb950;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #3fb950;
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: #3fb950;
+  color: #0d1117;
+}
+
+
+.details-section {
+  margin-top: 80px;
+  background: #161b22;
+  border: 1px solid #3fb950;
+  border-radius: 6px;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.45s ease;
+  pointer-events: none;
+}
+
+.details-section.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.details-section h3 {
+  margin-top: 0;
+  color: #3fb950;
+}
+
+.details-section h4 {
+  color: #3fb950;
+  margin-bottom: 6px;
+}
+
+.details-section p,
+.details-section ul {
+  color: #c9d1d9;
+  font-size: 14px;
+}
+
+
+footer {
+  margin-top: 80px;
+  border-top: 1px solid #21262d;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #8b949e;
+}
+.tech-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.tech-icons img {
+  width: 20%;
+  height: auto;
+  object-fit: contain;
+  transition: 0.25s ease;
+  filter: brightness(0.9);
+}
+
+.tech-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+@media (max-width: 1000px) {
+  .sidebar {
+    display: none;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="sidebar">
+  <h3>Enlaces</h3>
+  <a href="index.html">CV</a>
+  <a href="https://github.com/Alejpm" target="_blank">GitHub</a>
+  <a href="https://www.linkedin.com/in/alejandro-porter-05605139b/" target="_blank">LinkedIn</a>
+</section>
+
+<div class="container">
+
+<header>
+  <h1>Portfolio</h1>
+  <h2>Proyectos</h2>
+</header>
+
+<div class="project-grid">
+
+<div class="project-card">
+  <h4>ChatGPT Personalizado</h4>
+  <div class="tech">PHP · MySQL · JavaScript · Ollama</div>
+  <div class="tech-icons">
+    <img src="img/php.svg">
+    <img src="img/mysql.svg">
+    <img src="img/javascript.svg">
+    <img src="img/ollama.svg">
+  </div>
+
+  <div class="project-buttons">
+    <a href="https://github.com/Alejpm/Proyecto-ChatGPT" target="_blank">GitHub</a>
+    <button onclick="showProject('chat')">Mostrar</button>
+  </div>
+</div>
+
+<div class="project-card">
+  <h4>Sistema ERP</h4>
+  <div class="tech">PHP · MySQL · Chart.js · DomPDF</div>
+  <div class="tech-icons">
+    <img src="img/php.svg">
+    <img src="img/mysql.svg">
+    <img src="img/javascript.svg">
+    <img src="img/chartjs.svg">
+  </div>
+
+  <div class="project-buttons">
+    <a href="https://github.com/Alejpm/Proyecto-ERP" target="_blank">GitHub</a>
+    <button onclick="showProject('erp')">Mostrar</button>
+  </div>
+</div>
+
+<div class="project-card">
+  <h4>Monitorización de Recursos</h4>
+  <div class="tech">Python · PHP · MySQL · Chart.js</div>
+  <div class="tech-icons">
+    <img src="img/python.svg">
+    <img src="img/php.svg">
+    <img src="img/mysql.svg">
+    <img src="img/chartjs.svg">
+  </div>
+
+  <div class="project-buttons">
+    <a href="https://github.com/Alejpm/Proyecto-Monitor" target="_blank">GitHub</a>
+    <button onclick="showProject('monitor')">Mostrar</button>
+  </div>
+</div>
+
+<div class="project-card">
+  <h4>RAG + Embedding Service</h4>
+  <div class="tech">Python · Flask · ChromaDB · Ollama</div>
+  <div class="tech-icons">
+    <img src="img/python.svg">
+    <img src="img/flask.svg">
+    <img src="img/chromadb.svg">
+    <img src="img/ollama.svg">
+  </div>
+
+  <div class="project-buttons">
+    <a href="https://github.com/Alejpm/Proyecto-Embedding-IA" target="_blank">GitHub</a>
+    <button onclick="showProject('rag')">Mostrar</button>
+  </div>
+</div>
+
+</div> 
+
+<section id="project-details" class="details-section" aria-live="polite">
+  <h3 id="details-title"></h3>
+  <div id="details-content"></div>
+  <div style="margin-top:18px; display: flex; gap: 10px; flex-wrap: wrap;">
+    <button id="close-details" style="padding:8px 12px;border:1px solid #3fb950;border-radius:4px;background:transparent;color:#3fb950;cursor:pointer;font-family:'JetBrains Mono',monospace;">Cerrar</button>
+    <a id="details-github" href="#" target="_blank" style="padding:8px 12px;border:1px solid #3fb950;border-radius:4px;color:#3fb950;text-decoration:none;font-family:'JetBrains Mono',monospace;">GitHub</a>
+    <a id="details-docs" href="#" target="_blank" style="padding:8px 12px;border:1px solid #3fb950;border-radius:4px;color:#3fb950;text-decoration:none;font-family:'JetBrains Mono',monospace;">Documento</a>
+  </div>
+</section>
+
+<footer>
+// Alejandro Porter Mirkovic
+</footer>
+
+</div> 
+
+<script>
+let currentProject = null;
+
+const projects = {
+  chat: {
+    title: "ChatGPT Personalizado",
+    content: `
+      <p>Sistema tipo ChatGPT con integración local de modelos de lenguaje.</p>
+      <h4>Arquitectura</h4>
+      <ul>
+        <li>Backend en PHP (módulos auth, chat, api)</li>
+        <li>MySQL, tablas para usuarios, conversaciones y mensajes</li>
+        <li>Integración con Ollama (modelo Llama3 en local)</li>
+      </ul>
+      <h4>Funcionamiento</h4>
+      <ul>
+        <li>Método para registrar e iniciar sesión</li>
+        <li>Envía mensaje → backend construye el historial y lo transforma al formato con Ollama</li>
+        <li>Se hace la petición HTTP a Ollama</li>
+        <li>La respuesta se guarda en BD y se devuelve al frontend</li>
+      </ul>
+      <h4>Destacar</h4>
+      <ul>
+        <li>Uso de password_hash() y password_verify() para seguridad</li>
+        <li>Statements para prevenir SQL injection</li>
+        <li>Separación por includes</li>
+        <li>Persistencia de historial para mejorar respuestas IA</li>
+      </ul>
+    `,
+    github: "https://github.com/Alejpm/Proyecto-ChatGPT",
+    docs: "https://docs.google.com/document/d/1o5oJmlGzCmaR_JxHl_vyN5KzZ2ttSL7xGBJfOusSh5k/edit?usp=sharing"
+  },
+
+  erp: {
+    title: "Sistema ERP",
+    content: `
+      <p>ERP modular con dashboard, gestión de clientes/productos/pedidos junto a una facturación.</p>
+      <h4>Módulos</h4>
+      <ul>
+        <li>Clientes: CRUD con validacion</li>
+        <li>Productos: gestión y control de stock</li>
+        <li>Pedidos: creación, actualización y control de estado</li>
+        <li>Facturación: generación de PDF</li>
+      </ul>
+      <h4>Estructura</h4>
+      <ul>
+        <li>Arquitectura en capas (presentación, lógica, datos)</li>
+        <li>Transacciones SQL en creación de pedidos para mantener integridad</li>
+        <li>Kanban para la gestión visual de estados</li>
+        <li>Dashboard con gráficas y Chart.js</li>
+      </ul>
+      <h4>Destacar</h4>
+      <ul>
+        <li>Saneamiento de entradas</li>
+        <li>Modularidad para reutilizar</li>
+        <li>Generación de documentos (facturas) y exportación de datos</li>
+      </ul>
+    `,
+    github: "https://github.com/Alejpm/Proyecto-ERP",
+    docs: "https://docs.google.com/document/d/15NSriPO72nTcDJoATGhvKm6PLZzhzjHD7W_2dt_rnrc/edit?usp=sharing"
+  },
+
+  monitor: {
+    title: "Plataforma de Monitorización de Recursos",
+    content: `
+      <p>Sistema de monitorización con visualización tiempo real</p>
+      <h4>Estructura</h4>
+      <ul>
+        <li>Agente en Python para lectura de métricas (psutil, WMI donde aplica)</li>
+        <li>API / Backend para ingestión y almacenamiento (PHP / MySQL)</li>
+        <li>Panel de control con gráficos dinámicos (Chart.js)</li>
+        <li>Sistema de alertas por umbrales y export de datos</li>
+      </ul>
+      <h4>Funcionamiento</h4>
+      <ul>
+        <li>Agente recoge métricas periódicamente y las envía al backend</li>
+        <li>Backend valida y almacena las métricas en la BD</li>
+        <li>Frontend consulta la API para mostrar gráficos y estados</li>
+        <li>Alertas configurables disparan notificaciones o registros</li>
+      </ul>
+      <h4>Destacar</h4>
+      <ul>
+        <li>Persistencia eficiente</li>
+        <li>Uso de endpoints REST para separar lectura</li>
+        <li>Opciones de export</li>
+      </ul>
+    `,
+    github: "https://github.com/Alejpm/Proyecto-Monitor",
+    docs: "https://docs.google.com/document/d/1wO96VGoW1x3oaHJPhtQowVrlGv-zALpsDjX4fR-st60/edit?usp=sharing"
+  },
+
+  rag: {
+    title: "RAG + Embedding Service (Arquitectura Modular)",
+    content: `
+      <p>Plataforma modular para Retrieval Augmented Generation</p>
+      <h4>Servicios utilizados</h4>
+      <ul>
+        <li>Servicio de embeddings (Flask/Python) que procesa documentos y genera vectores</li>
+        <li>Indexing Service para ChromaDB y gestiona persistencia</li>
+        <li>Servicio RAG que hace la construcción del prompt</li>
+        <li>Servicio de generación que hace la petición a Ollama</li>
+      </ul>
+      <h4>Pipeline</h4>
+      <ul>
+        <li>Ingesta → chunking → embedding → indexación</li>
+        <li>En consulta: recuperación Top-K → construcción de contexto → petición LLM</li>
+        <li>Métricas de latencia y recall para monitorizar calidad</li>
+      </ul>
+      <h4>Destacar</h4>
+      <ul>
+        <li>Chunking dinámico</li>
+        <li>Uso de ChromaDB para indexación y persistencia vectorial</li>
+        <li>Separación de responsabilidades</li>
+      </ul>
+    `,
+    github: "https://github.com/Alejpm/Proyecto-Embedding-IA",
+    docs: "https://docs.google.com/document/d/1YvHT_NEFN7UcVUyiWhFeGLHoHmILqpY1AwwbJ1CPpsA/edit?usp=sharing"
+  }
+};
+
+const details = document.getElementById("project-details");
+const titleEl = document.getElementById("details-title");
+const contentEl = document.getElementById("details-content");
+const closeBtn = document.getElementById("close-details");
+const detailsGithub = document.getElementById("details-github");
+const detailsDocs = document.getElementById("details-docs");
+
+function showProject(projectKey) {
+  if (currentProject === projectKey) {
+    closeDetails();
+    return;
+  }
+
+  const project = projects[projectKey];
+  if (!project) return;
+
+  titleEl.innerHTML = project.title;
+  contentEl.innerHTML = project.content;
+  detailsGithub.href = project.github || "#";
+  detailsDocs.href = project.docs || "#";
+
+  details.classList.add("active");
+  currentProject = projectKey;
+
+  setTimeout(() => {
+    const yOffset = -20;
+    const rect = details.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const targetY = rect.top + scrollTop + yOffset;
+    window.scrollTo({ top: targetY, behavior: "smooth" });
+  }, 50);
+}
+
+function closeDetails() {
+  details.classList.remove("active");
+  currentProject = null;
+}
+
+closeBtn.addEventListener("click", closeDetails);
+
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  lastScroll = window.scrollY;
+});
+</script>
+
+</body>
+</html>
 
